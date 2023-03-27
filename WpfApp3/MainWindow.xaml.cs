@@ -75,16 +75,11 @@ namespace WpfApp3
 
         private void ShowSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if (ShowComboBox.SelectedItem != null)
-            //{
-            //    _selectedShowPrice = _shows[ShowComboBox.SelectedItem.ToString()];
-            //}
-
             if (ShowComboBox.SelectedIndex < 0) return;
 
             _selectedShowPrice = _shows[ShowComboBox.SelectedItem.ToString()];
 
-            // Загрузка картинки для выбранного представления
+            //Загрузка картинки для выбранного представления
             string showName = ShowComboBox.SelectedItem.ToString();
             string imagePath = $"C:\\Users\\123\\Desktop\\экзамен пример\\WpfApp3\\WpfApp3\\Images\\{showName}.jpg";
             ShowImage.Source = new BitmapImage(new Uri(imagePath, UriKind.Relative));
